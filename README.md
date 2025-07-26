@@ -6,13 +6,6 @@
 
 Published at **ACM MM 2025**.
 
+Code will come soon!
 
-## 🛠 Requirements
-
-```bash
-python >= 3.8
-torch >= 2.1
-transformers
-scipy
-numpy
 
