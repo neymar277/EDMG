@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDMG - Enhanced Dynamic Motion Generation</title>
+    
+    <!-- SEO优化标签 -->
+    <meta name="description" content="EDMG: Enhanced Dynamic Motion Generation - 基于深度学习的3D角色动态运动生成框架">
+    <meta name="keywords" content="3D动画, 运动生成, 深度学习, 计算机视觉, 人体姿态">
+    <meta name="author" content="Zhang Jinming">
+    
+    <!-- Open Graph标签用于社交媒体分享 -->
+    <meta property="og:title" content="EDMG - Enhanced Dynamic Motion Generation">
+    <meta property="og:description" content="创新的3D角色动态运动生成研究项目">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neymar277.github.io/EDMG">
+    
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 引入Google Fonts字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>EDMG</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#abstract" class="nav-link">摘要</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#framework" class="nav-link">框架</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#results" class="nav-link">结果</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#code" class="nav-link">代码</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 标题部分 -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="paper-header">
+                    <div class="paper-label">
+                        <i class="fas fa-file-alt"></i>
+                        PAPER
+                    </div>
+                    <h1 class="paper-title">ABSTRACT</h1>
+                </div>
+                
+                <div class="abstract-content">
+                    <p>
+                        驱动3D角色跟随音乐片段进行舞蹈是一个极具挑战性的任务，这主要由于舞蹈编排规范对姿态施加的空间约束。
+                        此外，生成的舞蹈序列还需要与不同音乐类型保持时间一致性。为了解决这些挑战，我们提出了一个新颖的
+                        音乐到舞蹈框架，Bailando，它包含两个强大的组件：1）一个舞蹈编排记忆，从3D姿态序列学习到量化
+                        编码本，2）一个生成预训练变换器（GPT），将这些单元组合成与音乐连贯的流畅舞蹈。通过学习的舞蹈编排
+                        记忆，舞蹈生成在满足高舞蹈编排标准的量化单元上实现，使得生成的舞蹈动作在各种运动节拍和音乐节拍之间
+                        保持一致。为了实现同步对齐，我们引入了一个基于演员-评论家的强化学习方案到GPT，采用新设计的节拍对齐
+                        奖励函数。在标准基准测试上的广泛实验表明，我们提出的框架在定性和定量方面都达到了最先进的性能。
+                        值得注意的是，学习的舞蹈编排记忆被证明能够以无监督的方式发现人类可解释的舞蹈风格姿态。
+                    </p>
+                </div>
+
+                <!-- 3D角色展示 -->
+                <div class="character-showcase">
+                    <div class="character-item">
+                        <img src="assets/character1.png" alt="3D角色舞蹈姿态1" class="character-img">
+                    </div>
+                    <div class="character-item">
+                        <img src="assets/character2.png" alt="3D角色舞蹈姿态2" class="character-img">
+                    </div>
+                    <div class="character-item">
+                        <img src="assets/character3.png" alt="3D角色舞蹈姿态3" class="character-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 框架部分 -->
+        <section id="framework" class="framework-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-text">BAILANDO FRAMEWORK</span>
+                    </div>
+                    <h2 class="section-title">TWO-STAGE CHOREOGRAPHY</h2>
+                </div>
+
+                <div class="framework-content">
+                    <div class="framework-description">
+                        <p>
+                            Bailando采用两阶段流水线进行舞蹈编排。在第一阶段，部署姿态VQVAE来编码和量化
+                            来自舞蹈运动数据的有意义的舞蹈成分到舞蹈编排记忆中。在第二阶段，学习运动GPT将
+                            音乐转换为视觉上令人满意的舞蹈。GPT网络通过引入人工"评论家"来进一步改进，以判断
+                            生成的舞蹈是否良好并指导GPT进行改变。
+                        </p>
+                    </div>
+                    
+                    <!-- 框架图 -->
+                    <div class="framework-diagram">
+                        <img src="assets/framework-diagram.png" alt="Bailando框架图" class="framework-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频演示部分 -->
+        <section id="results" class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video id="mainVideo" class="main-video" controls poster="assets/video-poster.jpg">
+                            <source src="EDMG.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                        <div class="video-overlay">
+                            <button class="play-button" id="playButton">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 音乐可视化条 -->
+                    <div class="music-visualizer">
+                        <div class="visualizer-bars">
+                            <div class="bar green"></div>
+                            <div class="bar green"></div>
+                            <div class="bar green"></div>
+                            <div class="bar green"></div>
+                            <div class="bar green"></div>
+                            <div class="bar purple"></div>
+                            <div class="bar purple"></div>
+                            <div class="bar purple"></div>
+                            <div class="bar purple"></div>
+                            <div class="bar blue"></div>
+                            <div class="bar blue"></div>
+                            <div class="bar blue"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代码和资源部分 -->
+        <section id="code" class="resources-section">
+            <div class="container">
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>源代码</h3>
+                        <p>GitHub仓库包含完整的实现代码和训练脚本</p>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            查看代码
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>研究论文</h3>
+                        <p>详细的技术论文和实验结果分析</p>
+                        <a href="EDMG_5191 (13).pdf" class="resource-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            下载论文
+                        </a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>数据集</h3>
+                        <p>训练和测试使用的舞蹈动作数据集</p>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            获取数据
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>EDMG Project</h3>
+                    <p>Enhanced Dynamic Motion Generation for 3D Characters</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:contact@edmg.com">联系我们</a>
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#" target="_blank">论文</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EDMG Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
+</html>
