@@ -8,8 +8,6 @@
 
 观看EDMG系统的完整演示视频：
 
-[![EDMG演示视频](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://drive.google.com/file/d/17UIRI4-YqCuTAk-PQ_xazPqTvanpV277/view?usp=drive_link)
-
 **[点击观看完整演示视频](https://drive.google.com/file/d/17UIRI4-YqCuTAk-PQ_xazPqTvanpV277/view?usp=drive_link)**
 
 Published at **ACM MM 2025**.
